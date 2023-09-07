@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -masm=intel -Og -fverbose-asm $CFILE -o ${CFILE%.c}.s
+gcc -S -masm=intel -fno-asynchronous-unwind-tables $CFILE -o ${CFILE%.c}.s
