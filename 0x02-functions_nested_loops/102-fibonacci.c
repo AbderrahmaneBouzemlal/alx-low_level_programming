@@ -21,10 +21,10 @@ int main(void)
 
 	while (fibon < 50)
 	{
-		printf("%d, ", fibonaci[fibon]);
+		printf("%ld, ", fibonaci[fibon]);
 		fibon++;
 	}
-	printf("%d\n", fibonaci[50]);
+	printf("%ld\n", fibonaci[50]);
 
 	return (0);
 }
