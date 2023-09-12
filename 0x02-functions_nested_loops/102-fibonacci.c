@@ -19,12 +19,12 @@ int main(void)
 
 	fibon = 0;
 
-	while (fibon < 50)
+	while (fibon < 49)
 	{
 		printf("%ld, ", fibonaci[fibon]);
 		fibon++;
 	}
-	printf("%ld\n", fibonaci[50]);
+	printf("%ld\n", fibonaci[49]);
 
 	return (0);
 }
