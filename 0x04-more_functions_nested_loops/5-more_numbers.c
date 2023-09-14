@@ -1,26 +1,26 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * more_numbers - prints 10 times the numbers from 0 to 14 with newline
- * Return: Always void
+ * more_numbers - Print numbers between 0 to 14 incl.
+ *
+ * Return: Void.
  */
 void more_numbers(void)
 {
 	int i;
-	int j;
+	int x;
 
-	for (j = 0; j < 10; j++)
+	for (x = 0; x < 10; x++)
 	{
-		for (i = 0; i < 15; i++)
+		i = 0;
+		while (i <= 14)
 		{
-			if (i < 10)
+			if (i >= 10)
 			{
-				_putchar(i + 48);
+				_putchar(i / 10 + '0');
 			}
-			else
-			{
-				printf("%d", i);
-			}
+				_putchar(i % 10 + '0');
+			i++;
 		}
 		_putchar('\n');
 	}
