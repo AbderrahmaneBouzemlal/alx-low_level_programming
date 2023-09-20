@@ -3,7 +3,7 @@
 /**
  * reverse_array - A function that reverses the content of an array
  * @a: The arrays to be reversed
- * @n: The number of elementsof the array
+ * @n: The number of elements of the array
  * Return: Always void
  */
 void reverse_array(int *a, int n)
@@ -11,14 +11,23 @@ void reverse_array(int *a, int n)
 	int k;
 	int temp;
 
-	for (k = 0; k < n / 2; k++)
+	if (n % 2)
 	{
-		if (n % 2 == 1 && k == (n / 2) - 1)
+		for (k = 0; k < n / 2; k++)
 		{
-			continue;
+			temp = a[k];
+			a[k] = a[n - k - 1];
+			a[n - k - 1] = temp;
 		}
-		temp = a[k];
-		a[k] = a[n - k - 1];
-		a[n - k - 1] = temp;
+	}
+
+	else
+	{
+		for (k = 0; k < (n / 2) - 1; k++)
+		{
+			temp = a[k];
+                        a[k] = a[n - k - 1];
+                        a[n - k - 1] = temp;
+		}
 	}
 }
