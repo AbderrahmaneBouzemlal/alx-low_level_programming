@@ -26,8 +26,8 @@ void reverse_array(int *a, int n)
 		for (k = 0; k < (n / 2) - 1; k++)
 		{
 			temp = a[k];
-                        a[k] = a[n - k - 1];
-                        a[n - k - 1] = temp;
+			a[k] = a[n - k - 1];
+			a[n - k - 1] = temp;
 		}
 	}
 }
