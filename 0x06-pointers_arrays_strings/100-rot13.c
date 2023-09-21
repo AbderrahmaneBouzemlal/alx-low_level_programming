@@ -10,16 +10,17 @@ char *rot13(char *str)
 
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+		while ((str[i] >= 'a' && str[i] <= 'z') ||
+				(str[i] >= 'A' && str[i] <= 'Z'))
 		{
-			str[i] += 13;
-		}
-		else if ((str[i] > 'M' && str[i] <= 'Z') || (str[i] > 'm' && str[i] <= 'z'))
-		{
-			str[i] -= 13;
+			if ((str[i] >= 'a' && str[i] <= 'm') ||
+					(str[i] >= 'A' && str[i] <= 'M'))
+				str[i] += 13;
+			else
+				str[i] -= 13;
+			i++;
 		}
 		i++;
 	}
-
 	return (str);
 }
