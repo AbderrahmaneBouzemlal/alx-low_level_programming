@@ -8,24 +8,19 @@
  */
 char *leet(char *str)
 {
-	int i;
-	int j = 0;
-	char leetmap[256] = {0};
-	char *leetchars = "AELTL";
-	char *leetreplacements = "43071";
+	int i, j;
+	char *leetchars = "AaEeOoTtLl";
+	char *leetreplacements = "4433007711";
 
-	for (i = 0; leetchars[i] != '\0' && leetreplacements[i] != '\0'; i++)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		leetmap[(unsigned char)leetchars[i]] = leetreplacements[i];
-		leetmap[(unsigned char)(leetchars[i] + 32)] = leetreplacements[i];
-	}
-	for (; str[j] != '\0'; j++)
-	{
-		if (leetmap[(unsigned char)str[j]] != 0)
+		j = 0;
+
+		while (leetchars[j] == str[i])
 		{
-			str[j] = leetmap[(unsigned char)str[j]];
+			str[i] = leetreplacements[j];
 		}
 	}
-
 	return (str);
 }
