@@ -17,10 +17,15 @@ char *leet(char *str)
 	{
 		j = 0;
 
-		while (leetchars[j] == str[i])
+		while (leetchars[j] != '\0')
 		{
-			str[i] = leetreplacements[j];
+			if (leetchars[j] == str[i])
+			{
+				str[i] = leetreplacements[j];
+			}
+			j++;
 		}
+		i++;
 	}
 	return (str);
 }
