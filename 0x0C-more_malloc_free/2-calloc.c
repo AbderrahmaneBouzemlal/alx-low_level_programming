@@ -10,17 +10,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int total = size * nmemb;
 	void *ptr1;
-	char *byte_ptr = ptr1;
+	char *byte_ptr;
 	int v;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptr1 = mallptr1 = malloc(total);
+	ptr1 = malloc(total);
 	if (ptr1 == NULL)
 	{
 		return (NULL);
 	}
-
+	byte_ptr = ptr1;
 	for (v = 0; v < total; v++)
 	{
 		byte_ptr[v] = 0;
