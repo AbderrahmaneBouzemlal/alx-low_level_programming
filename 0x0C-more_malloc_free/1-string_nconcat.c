@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * string_nconcat - Concatenates two strings
  * @s1: A pointer to the firstBest School string
@@ -24,8 +23,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	length = len1 + n + 1;
 	ptr = malloc(sizeof(char) * length);
 	if (ptr == NULL)
+	{
 		free(ptr);
 		return (NULL);
+	}
 	for (i = 0; i < length - 1; i++)
 	{
 		if (s1[i] != '\0')
@@ -42,6 +43,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	ptr[length] = '\0';
-
 	return (ptr);
 }
