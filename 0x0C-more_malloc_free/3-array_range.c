@@ -12,9 +12,9 @@ int *array_range(int min, int max)
 	int i = 0;
 	void *byte_ptr;
 	int *ptr;
-	int len;
+	int len = 0;
 
-	if (min >= max)
+	if (min > max)
 	{
 		return (NULL);
 	}
