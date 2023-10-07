@@ -8,11 +8,20 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *ptr1 = malloc(size * nmemb);
+	int total = size * nmemb;
+	void *ptr1 = malloc(total);
+	char *byte_ptr = ptr1;
+	int v;
 
 	if (ptr1 == NULL)
 	{
 		return (NULL);
 	}
+
+	for (v = 0; v < total; v++)
+	{
+		byte_ptr[v] = 0;
+	}
+
 	return (ptr1);
 }
