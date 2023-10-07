@@ -1,6 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 /**
+ * _strlen - calculate and return string length
+ * @string: string
+ * Return: string length
+ */
+int _strlen(char *string)
+{
+	int i = 0;
+		while (string[i] != '\0')
+			i++;
+	return (i);
+}
+
+/**
  * string_nconcat - Concatenates two strings
  * @s1: A pointer to the firstBest School string
  * @s2: A pointer to the second string
@@ -12,8 +25,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len1 = 0, len2 = 0, i, length;
 	char *ptr;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s1[len1] != '\0')
 		len1++;
 	while (s2[len2] != '\0')
