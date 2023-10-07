@@ -27,7 +27,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		free(ptr);
 		return (NULL);
 	}
-	for (i = 0; i < length - 1; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (s1[i] != '\0')
 		{
