@@ -22,17 +22,17 @@ int _strlen(char *string)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1 = 0, len2 = 0, i, length;
+	unsigned int len1, len2, i, length;
 	char *ptr;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	while (s1[len1] != '\0')
-		len1++;
-	while (s2[len2] != '\0')
-		len2++;
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	if (n < 0)
+		return (NULL);
 	if (n >= len2)
 		n = len2;
 	length = len1 + n + 1;
