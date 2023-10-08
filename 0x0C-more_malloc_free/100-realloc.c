@@ -73,6 +73,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		byte_ptr = malloc(new_size);
 		if (byte_ptr == NULL)
 			return (NULL);
+		return (byte_ptr);
 	}
 	if (new_size == 0 && ptr != NULL)
 	{
