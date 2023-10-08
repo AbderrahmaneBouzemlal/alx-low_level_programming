@@ -2,7 +2,7 @@
 #include <stdlib.h>
 void *copy_allocate(void *ptr, unsigned int old_size, unsigned int new_size);
 /**
- * _realloc - Reallocates a memory block
+ * copy_allocate - reallocates a memory block
  * @ptr: Is a pointer to the memory previously allocated
  * @old_size: Is the size of the allocated space for ptr
  * @new_size: Is the new size of the new memory block
@@ -24,7 +24,7 @@ void *copy_allocate(void *ptr, unsigned int old_size, unsigned int new_size)
 	byte_ptr = ptr;
 	byte_rptr = rptr;
 
-	for (i = 0; i < old_size; i++)	
+	for (i = 0; i < old_size; i++)
 	{
 		byte_rptr[i] = byte_ptr[i];
 	}
