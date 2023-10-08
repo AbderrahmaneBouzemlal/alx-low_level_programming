@@ -24,7 +24,7 @@ void *copy_allocate(void *ptr, unsigned int old_size, unsigned int new_size)
 	byte_ptr = ptr;
 	byte_rptr = rptr;
 
-	for (i = 0; i < old_size; i++)
+	for (i = 0; i < old_size && i < new_size; i++)
 	{
 		byte_rptr[i] = byte_ptr[i];
 	}
@@ -50,7 +50,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == 0)
 	{
 		free(ptr);
-		return (NULL);
+		byte_ptr = malloc(new_size)
+		return (byte_ptr);
 	}
 
 	if (ptr == NULL)
@@ -73,8 +74,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 
 	if (old_size == 0)
+	{
 		ptr = malloc(new_size);
-
+		return (ptr)
+	}
 	if (new_size != old_size && ptr != NULL)
 	{
 		ptr = copy_allocate(ptr, old_size, new_size);
