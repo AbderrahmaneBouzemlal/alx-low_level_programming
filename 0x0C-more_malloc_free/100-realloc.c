@@ -33,6 +33,7 @@ void *copy_allocate(void *ptr, unsigned int old_size, unsigned int new_size)
 		byte_rptr[i] = 0;
 	}
 	free(ptr);
+	free(byte_ptr);
 	return (rptr);
 }
 
