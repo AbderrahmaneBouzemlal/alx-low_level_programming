@@ -50,7 +50,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == 0)
 	{
 		free(ptr);
-		byte_ptr = malloc(new_size)
+		byte_ptr = malloc(new_size);
 		return (byte_ptr);
 	}
 
@@ -76,7 +76,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (old_size == 0)
 	{
 		ptr = malloc(new_size);
-		return (ptr)
+		return (ptr);
 	}
 	if (new_size != old_size && ptr != NULL)
 	{
