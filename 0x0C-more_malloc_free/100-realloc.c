@@ -45,7 +45,6 @@ void *copy_allocate(void *ptr, unsigned int old_size, unsigned int new_size)
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int dif = old_size - new_size;
 	char *byte_ptr;
 
 	if (new_size == 0)
