@@ -48,17 +48,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	int dif = old_size - new_size;
 	char *byte_ptr;
 
-	if (new_size > old_size)
+	if (new_size > old_size && ptr != NULL)
 	{
 		ptr = copy_allocate(ptr, old_size, new_size);
 	}
-	if (new_size < old_size)
+	if (new_size < old_size && ptr != NULL)
 	{
 		byte_ptr = ptr;
 		while (dif != 0)
 		{
 			free(&byte_ptr[new_size + dif - 1]);
 			dif--;
+
 		}
 		ptr = byte_ptr;
 		free(byte_ptr);
@@ -67,7 +68,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (ptr);
 	if (old_size == 0)
 		ptr = malloc(new_size);
-	if (new_size == 0)
+	if (ptr == NULL)
+	{
+		byte_ptr = malloc(new_size);
+		if (byte_ptr == NULL)
+			return (NULL);
+	}
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
