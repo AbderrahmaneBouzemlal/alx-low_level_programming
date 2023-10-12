@@ -9,9 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int a;
-	int b;
-	char *s;
 	int (*ptr)(int, int);
 
 	if (argc != 4)
@@ -19,17 +16,15 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	s = argv[2];
-	b = atoi(argv[3]);
-	a = atoi(argv[1]);
-	ptr = get_op_func(s);
-	
+
+	ptr = get_op_func(argv[2]);
+
 	if (ptr == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	printf("%d\n", ptr(a, b));
+	printf("%d\n", ptr(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
