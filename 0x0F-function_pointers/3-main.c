@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	int a;
 	int b;
 	char *s;
+	int (*ptr)(int, int);
 
 	if (argc != 4)
 	{
@@ -22,17 +23,14 @@ int main(int argc, char *argv[])
 	s = argv[2];
 	b = atoi(argv[3]);
 	a = atoi(argv[1]);
-
-	if (get_op_func(s) == NULL)
+	ptr = get_op_func(s);
+	
+	if (ptr == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	else
-	{
-		printf("%d\n", (*get_op_func(s))(a, b));
-	}
-
+	printf("%d\n", ptr(a, b));
 	return (0);
 }
