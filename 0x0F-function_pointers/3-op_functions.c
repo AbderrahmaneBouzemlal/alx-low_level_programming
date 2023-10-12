@@ -31,11 +31,7 @@ int op_sub(int a, int b)
 
 int op_mul(int a, int b)
 {
-	int c;
-
-	c = a * b;
-	printf("%d\n", c);
-	return (c);
+	return (a * b);
 }
 /**
  * op_div - divide two numbers
