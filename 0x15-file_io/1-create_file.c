@@ -33,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 		close(fd);
 		return (-1);
 	}
-	if (strlen(text_content) != bytes_written)
+	if ((ssize_t)strlen(text_content) != bytes_written)
 		return (-1);
 	close(fd);
 	return (1);
