@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fileDescriptor;
-	char *buffer = malloc(sizeof(char) * letters); 
+	char *buffer = malloc(sizeof(char) * letters);
 	ssize_t num = 0;
 	ssize_t printed_bytes = 0;
 
