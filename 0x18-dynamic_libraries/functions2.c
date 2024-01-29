@@ -46,9 +46,6 @@ char *_strcpy(char *dest, char *src)
  */
 int _atoi(char *s)
 {
-	int number;
-
-	number = atoi(s);
-	return (number);
+	return (0);
 }
 
