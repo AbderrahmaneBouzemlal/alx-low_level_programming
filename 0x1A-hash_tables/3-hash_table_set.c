@@ -8,13 +8,14 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
+	unsigned long int index = 0;
 	hash_node_t *node;
 	hash_node_t *entry;
 
 	if (!key || !ht)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
+	printf("%lu\n", index);
 
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
