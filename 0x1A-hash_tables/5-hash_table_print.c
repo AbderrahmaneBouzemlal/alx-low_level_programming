@@ -16,22 +16,14 @@ void hash_table_print(const hash_table_t *ht)
 	for (; i < ht->size; ++i)
 	{
 		ptr = ht->array[i];
-		if (ptr == NULL)
-			continue;
-		else
-		{
-			if (f == 1)
-				printf(", ");
-		}
 
-		for (;;)
+		while (ptr)
 		{
+			if (f)
+				printf(", ");
 			printf("'%s': '%s'", ptr->key, ptr->value);
-			if (f == 0)
-				f = 1;
-			if (ptr->next == NULL)
-				break;
 			ptr = ptr->next;
+			f = 1;
 
 		}
 	}
