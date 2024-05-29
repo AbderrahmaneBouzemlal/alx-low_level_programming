@@ -1,0 +1,6 @@
+CC := gcc
+SRC := (wildcard *.c)
+NAME := $(SRC:%.c=%)
+OBJ := $(NAME *.o)
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
